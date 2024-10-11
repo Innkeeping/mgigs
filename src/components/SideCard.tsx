@@ -13,25 +13,27 @@ const SideCard = ({ setFilter }: SideCardProps) => {
   };
 
   return (
-    <div className="card card-side bg-base-100 shadow-xl w-3/4 sticky top-4 ml-16 h-screen/3 border border-white">
-      <div className="card-body items-center h-full">
+    <div className="card card-side bg-base-100 shadow-xl w-3/4 sticky top-4 ml-16 h-96 border border-white">
+      <div className="card-body items-center h-96">
         <h1 className="card-title text-1xl pb-2 pt-4">Welcome to mGigs</h1>
         <h2 className="card-subtitle">Find your next gig here!</h2>
         <input
           type="text"
-          className="input input-bordered input-sm w-full mt-4"
+          className="input input-bordered input-sm w-full mt-2"
           placeholder="Search by title"
           value={filter}
           onChange={handleFilterChange}
         />
-        <div className="flex flex-wrap gap-2 mt-4 flex-1 overflow-y-auto">
-          <button className="btn btn-sm btn-primary hover:bg-primary-focus">New</button>
-          <button className="btn btn-sm btn-secondary hover:bg-secondary-focus">Trending</button>
-          <button className="btn btn-sm btn-accent hover:bg-accent-focus">Popular</button>
-          <button className="btn btn-sm btn-info hover:bg-info-focus">Hot</button>
-          <button className="btn btn-sm btn-success hover:bg-success-focus">DAOs</button>
-          <button className="btn btn-sm btn-warning hover:bg-warning-focus">Web3</button>
-          <button className="btn btn-sm btn-error hover:bg-error-focus">Design</button>
+        <div className="flex flex-1 flex-col justify-center mt-2">
+          <div className="flex flex-wrap gap-2 w-full justify-center overflow-y-auto mb-4">
+            <button className="btn btn-sm btn-primary hover:bg-primary-focus">New</button>
+            <button className="btn btn-sm btn-secondary hover:bg-secondary-focus">Trending</button>
+            <button className="btn btn-sm btn-accent hover:bg-accent-focus">Popular</button>
+            <button className="btn btn-sm btn-info hover:bg-info-focus">Hot</button>
+            <button className="btn btn-sm btn-success hover:bg-success-focus">DAOs</button>
+            <button className="btn btn-sm btn-warning hover:bg-warning-focus">Web3</button>
+            <button className="btn btn-sm btn-error hover:bg-error-focus">Design</button>
+          </div>
         </div>
       </div>
     </div>
