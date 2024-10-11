@@ -1,8 +1,8 @@
 
 const Navbar = () => {
   return (
-    <div className="sticky top-0 navbar bg-base-100 min-h-0 z-[1001] justify-between shadow-md shadow-white px-0 sm:px-2 mb-4">
-      <div className="navbar-start">
+    <div className="sticky top-0 navbar bg-base-100 min-h-0 z-[1001] justify-between shadow-md shadow-white px-8 sm:px-2 mb-4 w-11/12 mx-auto">
+      <div className="navbar-start px-4">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
@@ -53,7 +53,7 @@ const Navbar = () => {
           <li><a>Post</a></li>
         </ul>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end px-4">
         <a className="btn">Connect Wallet</a>
       </div>
     </div>

@@ -7,7 +7,7 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <div className="container mx-auto p-4 mt-4 overflow-y-auto min-h-screen">
+      <div className="container mx-auto p-4 mt-24 overflow-y-auto min-h-screen">
         <div className="grid grid-cols-3 gap-4">
           <SideCard />
           <div className="flex flex-col gap-4 flex-1">
