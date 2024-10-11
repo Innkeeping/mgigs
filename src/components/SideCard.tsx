@@ -13,8 +13,8 @@ const SideCard = ({ setFilter }: SideCardProps) => {
   };
 
   return (
-    <div className="card card-side bg-base-100 shadow-xl w-3/4 sticky top-4 ml-10 h-96 border border-white">
-      <div className="card-body items-center h-96">
+    <div className="card card-side bg-base-100 shadow-xl w-fit h-fit sticky top-4 ml-10 border border-white">
+      <div className="card-body items-center">
         <h1 className="card-title text-1xl pb-2 pt-4">Welcome to mGigs</h1>
         <h2 className="card-subtitle">Find your next gig here!</h2>
         <input
@@ -24,8 +24,8 @@ const SideCard = ({ setFilter }: SideCardProps) => {
           value={filter}
           onChange={handleFilterChange}
         />
-        <div className="flex flex-1 flex-col justify-center mt-2">
-          <div className="flex flex-wrap gap-2 w-full justify-center overflow-y-auto mb-4">
+        <div className="flex justify-center mt-2">
+          <div className="flex flex-wrap gap-2 w-full justify-center mb-0">
             <button className="btn btn-sm btn-primary hover:bg-primary-focus">New</button>
             <button className="btn btn-sm btn-secondary hover:bg-secondary-focus">Trending</button>
             <button className="btn btn-sm btn-accent hover:bg-accent-focus">Popular</button>
