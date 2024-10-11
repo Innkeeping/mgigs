@@ -13,7 +13,7 @@ const SideCard = ({ setFilter }: SideCardProps) => {
   };
 
   return (
-    <div className="card card-side bg-base-100 shadow-xl w-3/4 sticky top-4 ml-16 h-96 border border-white">
+    <div className="card card-side bg-base-100 shadow-xl w-3/4 sticky top-4 ml-10 h-96 border border-white">
       <div className="card-body items-center h-96">
         <h1 className="card-title text-1xl pb-2 pt-4">Welcome to mGigs</h1>
         <h2 className="card-subtitle">Find your next gig here!</h2>

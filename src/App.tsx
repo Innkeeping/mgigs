@@ -26,8 +26,8 @@ const App = () => {
       <Navbar />
       <h1 className="text-2xl text-center mx-auto mt-16">All Bounties</h1>
       <h2 className="text-center text-lg mt-4 mb-4 text-accent">Explore gigs and bounties</h2>
-      <div className="container mx-auto p-4 mt-4 overflow-y-auto min-h-screen">
-        <div className="grid grid-cols-3 gap-4">
+      <div className="container mt-4 overflow-y-auto min-h-screen">
+        <div className="grid grid-cols-2 gap-0">
           <SideCard setFilter={(filter) => setFilter(filter)} />
           <div className="flex flex-col gap-4 flex-1">
             {filteredCards.map((card, index) => (
