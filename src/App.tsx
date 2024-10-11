@@ -1,7 +1,7 @@
-import Navbar from './components/Navbar';
-import SideCard from './components/SideCard';
-import Card from './components/Card';
-import cardsData from './Card.json';
+import Navbar from './components/Navbar'
+import SideCard from './components/SideCard'
+import Card from './components/Card'
+import cardsData from './Cards.json'
 
 const App = () => {
   return (

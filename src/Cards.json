@@ -1,0 +1,32 @@
+[
+  {
+    "title": "New gig0.",
+    "description": "Click the button to learn more.",
+    "image": "src/assets/laptop.svg"
+  },
+  {
+    "title": "New gig1.",
+    "description": "Click the button to learn more.",
+    "image": "src/assets/laptop.svg"
+  },
+  {
+    "title": "New gig2.",
+    "description": "Click the button to learn more.",
+    "image": "src/assets/laptop.svg"
+  },
+  {
+    "title": "New gig3.",
+    "description": "Click the button to learn more.",
+    "image": "src/assets/laptop.svg"
+  },
+  {
+    "title": "New gig4.",
+    "description": "Click the button to learn more.",
+    "image": "src/assets/laptop.svg"
+  },
+  {
+    "title": "New gig5.",
+    "description": "Click the button to learn more.",
+    "image": "src/assets/laptop.svg"
+  }
+]
