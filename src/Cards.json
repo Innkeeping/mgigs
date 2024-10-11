@@ -1,32 +1,32 @@
 [
   {
     "title": "New gig0.",
-    "description": "Click the button to learn more.",
+    "description": "Posted on date.",
     "image": "src/assets/laptop.svg"
   },
   {
     "title": "New gig1.",
-    "description": "Click the button to learn more.",
+    "description": "Posted on date2.",
     "image": "src/assets/laptop.svg"
   },
   {
     "title": "New gig2.",
-    "description": "Click the button to learn more.",
+    "description": "Posted on date3.",
     "image": "src/assets/laptop.svg"
   },
   {
     "title": "New gig3.",
-    "description": "Click the button to learn more.",
+    "description": "Posted on date4.",
     "image": "src/assets/laptop.svg"
   },
   {
     "title": "New gig4.",
-    "description": "Click the button to learn more.",
+    "description": "Posted on date5.",
     "image": "src/assets/laptop.svg"
   },
   {
     "title": "New gig5.",
-    "description": "Click the button to learn more.",
+    "description": "Posted on date6.",
     "image": "src/assets/laptop.svg"
   }
 ]
