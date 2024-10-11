@@ -7,7 +7,7 @@ interface CardProps {
 
 const Card = ({ title, description, image, onClick }: CardProps) => {
   return (
-    <div className="card bg-base-100 shadow-xl h-48 md:h-40 lg:h-48 w-3/4 ml-0 mr-4 border border-white hover:bg-slate-700 flex" onClick={onClick}>
+    <div className="card bg-base-100 shadow-xl h-48 md:h-40 lg:h-48 lg:w-3/4 md:-1/2 sm:w-full sm:ml-6 md:ml-0 ml-0 mr-4 border border-white hover:bg-slate-700 flex" onClick={onClick}>
       <div className="flex">
         <img src={image} className="w-16 rounded-full ml-4 mt-4" />
       </div>
