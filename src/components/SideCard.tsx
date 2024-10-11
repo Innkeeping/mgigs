@@ -24,7 +24,7 @@ const SideCard = ({ setFilter }: SideCardProps) => {
           value={filter}
           onChange={handleFilterChange}
         />
-        <div className="flex justify-center mt-2">
+        <div className="flex flex-col justify-center mt-2">
           <div className="flex flex-wrap gap-2 w-full justify-center mb-0">
             <button className="btn btn-sm btn-primary hover:bg-primary-focus">New</button>
             <button className="btn btn-sm btn-secondary hover:bg-secondary-focus">Trending</button>

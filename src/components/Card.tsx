@@ -7,16 +7,18 @@ interface CardProps {
 
 const Card = ({ title, description, image, onClick }: CardProps) => {
   return (
-    <div className="card bg-base-100 shadow-xl h-48 md:h-40 lg:h-48 w-full ml-0 mr-16 border border-white hover:bg-slate-700 flex" onClick={onClick}>
+    <div className="card bg-base-100 shadow-xl h-48 md:h-40 lg:h-48 w-3/4 ml-0 mr-4 border border-white hover:bg-slate-700 flex" onClick={onClick}>
       <div className="flex">
-        <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" className="w-16 rounded-full ml-4 mt-4" />
+        <img src={image} className="w-16 rounded-full ml-4 mt-4" />
       </div>
       <div className="pl-4">
         <h2 className="card-title">{title}</h2>
         <p className="font-medium text-accent">{description}</p>
       </div>
       <div className="flex justify-end">
-        <div className="badge badge-neutral rounded-sm mr-4">Bid/Reward$</div>
+        <div className="tooltip" data-tip="This gig is open to bids or has a set reward.">
+        <div className="btn btn-xs btn-neutral rounded-md mr-4">Bid/Reward$</div>
+        </div>
       </div>
       <div className="flex pl-4">
         <div className="pb-2">
