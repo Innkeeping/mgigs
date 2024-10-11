@@ -1,13 +1,13 @@
-
 interface CardProps {
   title: string;
   description: string;
   image: string;
+  onClick: () => void;
 }
 
-const Card = ({ title, description, image }: CardProps) => {
+const Card = ({ title, description, image, onClick }: CardProps) => {
   return (
-    <div className="card bg-base-100 shadow-xl h-full w-full border border-white hover:bg-slate-700">
+    <div className="card bg-base-100 shadow-xl h-full w-full border border-white hover:bg-slate-700" onClick={onClick}>
       <figure>
         <img src={image} alt="gig" className="w-12 h-12 mx-auto pt-4" />
       </figure>
