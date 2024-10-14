@@ -16,10 +16,10 @@ const Sidebar = ({ children }) => {
           <ul className="menu bg-base-200 text-base-content">
           <li><Link to="/" className="[&.active]:font-bold btn btn-ghost text-xl">🔍Discover
           </Link>{' '}</li>
-            <li><a>▦Taskfeed</a></li>
+          <Link to="/taskboard" className="[&.active]:font-bold">▦Taskboard</Link>
             <li><a>🔖Bookmarks</a></li>
+            <li><a>▦Taskfeed</a></li>
             <li><a>🔔Inbox</a></li>
-            <Link to="/taskboard" className="[&.active]:font-bold">▦Taskboard</Link>
             <li><a>👤Profile</a></li>
           </ul>
           <div className="bg-base-200 p-4 border-t border-base-300">
