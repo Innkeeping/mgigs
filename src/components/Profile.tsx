@@ -4,26 +4,26 @@ import SettingsModal from './SettingsModal';
 import FeaturedWorkModal from './FeaturedWorkModal';
 
 const Profile = () => {
-  const handleOutsideClick = (e) => {
-    const editProfileModal = document.getElementById('edit_profile_modal');
-    const settingsModal = document.getElementById('settings_modal');
-    const featuredWorkModal = document.getElementById('featured_work_modal');
+  const handleOutsideClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const editProfileModal = document.getElementById('edit_profile_modal') as HTMLDialogElement | null;
+    const settingsModal = document.getElementById('settings_modal') as HTMLDialogElement | null;
+    const featuredWorkModal = document.getElementById('featured_work_modal') as HTMLDialogElement | null;
 
-    if (e.target === editProfileModal || editProfileModal.contains(e.target)) {
+    if (editProfileModal && (editProfileModal === e.target || editProfileModal.contains(e.target as Node))) {
       return;
     }
 
-    if (e.target === settingsModal || settingsModal.contains(e.target)) {
+    if (settingsModal && (settingsModal === e.target || settingsModal.contains(e.target as Node))) {
       return;
     }
 
-    if (e.target === featuredWorkModal || featuredWorkModal.contains(e.target)) {
+    if (featuredWorkModal && (featuredWorkModal === e.target || featuredWorkModal.contains(e.target as Node))) {
       return;
     }
 
-    editProfileModal.close();
-    settingsModal.close();
-    featuredWorkModal.close();
+    if (editProfileModal) editProfileModal.close();
+    if (settingsModal) settingsModal.close();
+    if (featuredWorkModal) featuredWorkModal.close();
   };
 
   return (
@@ -40,8 +40,8 @@ const Profile = () => {
               </div>
               <h2 className="card-title">User Name</h2>
               <div className="flex flex-col items-center gap-2 mt-2">
-                <button className="btn btn-md btn-neutral w-full lg:w-48 p-2 ml-2 mr-2 rounded-md" onClick={()=>document.getElementById('edit_profile_modal').showModal()}>Edit Profile</button>
-                <button className="btn btn-md btn-neutral w-full lg:w-48 p-2 ml-2 mr-2 rounded-md" onClick={()=>document.getElementById('settings_modal').showModal()}>Settings</button>
+                <button className="btn btn-md btn-neutral w-full lg:w-48 p-2 ml-2 mr-2 rounded-md" onClick={()=>document.getElementById('edit_profile_modal')?.showModal()}>Edit Profile</button>
+                <button className="btn btn-md btn-neutral w-full lg:w-48 p-2 ml-2 mr-2 rounded-md" onClick={()=>document.getElementById('settings_modal')?.showModal()}>Settings</button>
               </div>
             </div>
           </div>
@@ -60,7 +60,7 @@ const Profile = () => {
               <h2 className="card-title">About Me</h2>
               <p className="text-sm text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
               <h2 className="card-title mt-4">Featured Work</h2>
-              <button className="btn btn-square btn-md btn-neutral w-full lg:w-48 p-2 ml-2 mr-2 rounded-md" onClick={()=>document.getElementById('featured_work_modal').showModal()}>Add Featured Work</button>
+              <button className="btn btn-square btn-md btn-neutral w-full lg:w-48 p-2 ml-2 mr-2 rounded-md" onClick={()=>document.getElementById('featured_work_modal')?.showModal()}>Add Featured Work</button>
             </div>
           </div>
           <div className="card bg-base-100 shadow-xl w-full h-fit mt-2 rounded-md">
