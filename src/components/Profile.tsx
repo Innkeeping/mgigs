@@ -29,8 +29,8 @@ const Profile = () => {
   return (
     <Sidebar>
       <h1 className="text-4xl font-bold mb-2 mt-2">My Profile</h1>
-      <div className="max-w-2xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 mr-2 mt-4 lg:mt-4 ml-14 lg:mr-4 ">
-        <div className="justify-center">
+      <div className="max-w-2xl mx-auto grid grid-cols-1 lg:grid-cols-2 sm:grid-cols-1 gap-4 mr-2 mt-4 lg:mt-4 ml-14 lg:mr-4">
+        <div className="justify-center lg:col-span-1 sm:col-span-1">
           <div className="card bg-base-100 shadow-xl w-full lg:w-64 h-fit rounded-md">
             <div className="card-body items-center">
               <div className="avatar">
@@ -54,7 +54,7 @@ const Profile = () => {
             </div>
           </div>
         </div>
-        <div className="lg:col-span-1">
+        <div className="lg:col-span-1 sm:col-span-1">
           <div className="card bg-base-100 shadow-xl w-full h-fit rounded-md">
             <div className="card-body">
               <h2 className="card-title">About Me</h2>
