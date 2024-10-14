@@ -6,7 +6,7 @@ const Sidebar = ({ children }) => {
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col items-center justify-center overflow-y-hidden">
         {children}
-        <label htmlFor="my-drawer-2" className="btn btn-square btn-md btn-neutral w-8 h-8 fixed top-24 left-0 z-10 lg:hidden">
+        <label htmlFor="my-drawer-2" className="btn btn-square btn-md btn-neutral w-8 h-8 fixed top-36 left-0 z-10 lg:hidden">
           →
         </label>
       </div>
@@ -45,10 +45,10 @@ const Sidebar = ({ children }) => {
             </a>
           </li>
           <li className="py-2">
-            <a className="flex items-center">
+            <Link to="/profile" className="[&.active]:font-bold flex items-center">
               <span className="mr-2">👤</span>
               Profile
-            </a>
+            </Link>
           </li>
           </ul>
           <div className="bg-base-200 p-4 border-t border-base-300">
@@ -62,7 +62,7 @@ const Sidebar = ({ children }) => {
                 <span className="text-lg font-bold">User Name</span>
               </div>
               <div className="flex items-center">
-                <button className="btn btn-square btn-xs btn-neutral ml-2 mr-2">⚙️</button>
+                <button className="btn btn-square btn-xs btn-neutral ml-2 mr-2" onClick={() => document.getElementById('settings_modal').showModal()}>⚙️</button>
                 <button className="btn btn-square btn-xs btn-neutral">🔔</button>
               </div>
             </div>
