@@ -30,7 +30,7 @@ const FeaturedWorkModal = () => {
 
   return (
     <dialog id="featured_work_modal" className="modal">
-      <div className="modal-box">
+      <div className="modal-box mt-16">
         <div className="flex justify-between">
           <h3 className="font-bold text-lg">Add Featured Work</h3>
           <button type="button" className="btn btn-sm btn-circle btn-neutral" onClick={() => document.getElementById('featured_work_modal').close()}>&times;</button>

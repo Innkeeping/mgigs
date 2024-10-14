@@ -13,14 +13,43 @@ const Sidebar = ({ children }) => {
       <div className="drawer-side mt-20 lg:mt-16 lg:ml-12 lg:w-64">
         <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay lg:hidden"></label>
         <div className="flex flex-col h-screen pt-8">
-          <ul className="menu bg-base-200 text-base-content">
-          <li><Link to="/" className="[&.active]:font-bold btn btn-ghost text-xl">🔍Discover
-          </Link>{' '}</li>
-          <Link to="/taskboard" className="[&.active]:font-bold">▦Taskboard</Link>
-            <li><a>🔖Bookmarks</a></li>
-            <li><a>▦Taskfeed</a></li>
-            <li><a>🔔Inbox</a></li>
-            <li><a>👤Profile</a></li>
+          <ul className="menu bg-base-200 text-base-content justify-left">
+          <li className="py-2">
+            <Link to="/" className="[&.active]:font-bold flex items-center">
+              <span className="mr-2">🔍</span>
+              Discover
+            </Link>
+          </li>
+          <li className="py-2">
+            <Link to="/taskboard" className="[&.active]:font-bold flex items-center">
+              <span className="mr-2">▦</span>
+              Taskboard
+            </Link>
+          </li>
+          <li className="py-2">
+            <a className="flex items-center">
+              <span className="mr-2">🔖</span>
+              Bookmarks
+            </a>
+          </li>
+          <li className="py-2">
+            <a className="flex items-center">
+              <span className="mr-2">▦</span>
+              Taskfeed
+            </a>
+          </li>
+          <li className="py-2">
+            <a className="flex items-center">
+              <span className="mr-2">🔔</span>
+              Inbox
+            </a>
+          </li>
+          <li className="py-2">
+            <a className="flex items-center">
+              <span className="mr-2">👤</span>
+              Profile
+            </a>
+          </li>
           </ul>
           <div className="bg-base-200 p-4 border-t border-base-300">
             <div className="flex items-center justify-between">

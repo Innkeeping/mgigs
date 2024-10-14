@@ -31,7 +31,10 @@ const Taskboard = () => {
     const newTaskId = tasks.length + 1;
     const newTaskObject = { id: newTaskId,...task, status: newTaskStatus };
     setTasks([...tasks, newTaskObject]);
-    setModalOpen(false);
+    if (!modalOpen) {
+      setNewTaskStatus('to-do');
+      setModalOpen(true);
+    }
   };
 
   return (
