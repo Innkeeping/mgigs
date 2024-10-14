@@ -1,15 +1,22 @@
 import { useState } from'react';
 
+interface FeaturedWork {
+  title: string;
+  description: string;
+  link: string;
+  image: File | null;
+}
+
 const FeaturedWorkModal = () => {
   const [featuredWorkTitle, setFeaturedWorkTitle] = useState('');
   const [featuredWorkDescription, setFeaturedWorkDescription] = useState('');
   const [featuredWorkLink, setFeaturedWorkLink] = useState('');
-  const [featuredWorkImage, setFeaturedWorkImage] = useState(null);
-  const [featuredWorkList, setFeaturedWorkList] = useState([]);
+  const [featuredWorkImage, setFeaturedWorkImage] = useState<File | null>(null);
+  const [featuredWorkList, setFeaturedWorkList] = useState<FeaturedWork[]>([]);
 
   const handleAddFeaturedWork = () => {
     if (featuredWorkTitle && featuredWorkDescription && featuredWorkLink) {
-      const newWork = {
+      const newWork: FeaturedWork = {
         title: featuredWorkTitle,
         description: featuredWorkDescription,
         link: featuredWorkLink,
@@ -24,8 +31,17 @@ const FeaturedWorkModal = () => {
     }
   };
 
-  const handleImageChange = (e) => {
-    setFeaturedWorkImage(e.target.files[0]);
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      setFeaturedWorkImage(e.target.files[0]);
+    }
+  };
+
+  const handleCloseModal = () => {
+    const modal = document.getElementById('featured_work_modal');
+    if (modal instanceof HTMLDialogElement) {
+      modal.close();
+    }
   };
 
   return (
@@ -33,7 +49,7 @@ const FeaturedWorkModal = () => {
       <div className="modal-box mt-16">
         <div className="flex justify-between">
           <h3 className="font-bold text-lg">Add Featured Work</h3>
-          <button type="button" className="btn btn-sm btn-circle btn-neutral" onClick={() => document.getElementById('featured_work_modal').close()}>&times;</button>
+          <button type="button" className="btn btn-sm btn-circle btn-neutral" onClick={handleCloseModal}>&times;</button>
         </div>
         <form>
           <label className="label">Title:</label>

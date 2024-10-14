@@ -1,23 +1,28 @@
 import { useState } from'react';
 
-const ApplyModal = ({ isOpen, onClose }) => {
-  const [selectedDates, setSelectedDates] = useState([]);
-  const [selectedToken, setSelectedToken] = useState('');
-  const [message, setMessage] = useState('');
+interface ApplyModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
 
-  const handleDateChange = (e) => {
-    setSelectedDates(e.target.value);
+const ApplyModal: React.FC<ApplyModalProps> = ({ isOpen, onClose }) => {
+  const [selectedDates, setSelectedDates] = useState<string[]>([]);
+  const [selectedToken, setSelectedToken] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
+
+  const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedDates([e.target.value]);
   };
 
-  const handleTokenChange = (e) => {
+  const handleTokenChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedToken(e.target.value);
   };
 
-  const handleMessageChange = (e) => {
+  const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
     setMessage(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Handle form submission here
   };
@@ -40,13 +45,9 @@ const ApplyModal = ({ isOpen, onClose }) => {
         <div className="overflow-y-auto h-full pb-10">
           <h2 className="text-2xl font-bold">Apply for Opportunity</h2>
           <label className="label">Availability:</label>
-          <input type="date" value={selectedDates} onChange={handleDateChange} />
+          <input type="date" value={selectedDates.join(', ')} onChange={handleDateChange} />
           <label className="label">Token:</label>
-          <select value={selectedToken} onChange={handleTokenChange}>
-            <option value="">Select Token</option>
-            <option value="token1">Token 1</option>
-            <option value="token2">Token 2</option>
-          </select>
+          <input type="text" value={selectedToken} onChange={handleTokenChange} />
           <label className="label">Message:</label>
           <textarea value={message} onChange={handleMessageChange} />
         </div>

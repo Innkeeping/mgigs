@@ -1,10 +1,20 @@
-const EditProfileModal = () => {
-  const handleOutsideClick = (e) => {
-    if (e.target === document.getElementById('edit_profile_modal') || document.getElementById('edit_profile_modal').contains(e.target)) {
+import React from'react';
+
+interface EditProfileModalProps {
+  // Add expected props
+}
+
+const EditProfileModal: React.FC<EditProfileModalProps> = () => {
+  const handleOutsideClick: React.MouseEventHandler<HTMLDialogElement> = (e) => {
+    const modal = document.getElementById('edit_profile_modal');
+    if (e.target === modal || modal?.contains(e.target as Element)) {
       return;
     }
 
-    document.getElementById('edit_profile_modal').close();
+    const modalElement = document.getElementById('edit_profile_modal');
+    if (modalElement) {
+      (modalElement as HTMLDialogElement).close();
+    }
   };
 
   return (
@@ -12,7 +22,12 @@ const EditProfileModal = () => {
       <div className="modal-box">
         <div className="flex justify-between">
           <h3 className="font-bold text-lg">Edit Profile</h3>
-          <button type="button" className="btn btn-sm btn-circle btn-neutral" onClick={() => document.getElementById('edit_profile_modal').close()}>&times;</button>
+          <button type="button" className="btn btn-sm btn-circle btn-neutral" onClick={() => {
+            const modal = document.getElementById('edit_profile_modal');
+            if (modal) {
+              (modal as HTMLDialogElement).close();
+            }
+          }}>&times;</button>
         </div>
         <form>
           <div className="flex flex-col items-center gap-4">
