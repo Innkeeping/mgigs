@@ -1,11 +1,13 @@
 import Sidebar from '../components/Sidebar';
 import EditProfileModal from './EditProfileModal';
 import SettingsModal from './SettingsModal';
+import FeaturedWorkModal from './FeaturedWorkModal';
 
 const Profile = () => {
   const handleOutsideClick = (e) => {
     const editProfileModal = document.getElementById('edit_profile_modal');
     const settingsModal = document.getElementById('settings_modal');
+    const featuredWorkModal = document.getElementById('featured_work_modal');
 
     if (e.target === editProfileModal || editProfileModal.contains(e.target)) {
       return;
@@ -15,8 +17,13 @@ const Profile = () => {
       return;
     }
 
+    if (e.target === featuredWorkModal || featuredWorkModal.contains(e.target)) {
+      return;
+    }
+
     editProfileModal.close();
     settingsModal.close();
+    featuredWorkModal.close();
   };
 
   return (
@@ -54,6 +61,8 @@ const Profile = () => {
             <div className="card-body">
               <h2 className="card-title">About Me</h2>
               <p className="text-sm text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+              <h2 className="card-title mt-4">Featured Work</h2>
+              <button className="btn btn-square btn-md btn-neutral w-full lg:w-48 p-2 ml-2 mr-2 rounded-md" onClick={()=>document.getElementById('featured_work_modal').showModal()}>Add Featured Work</button>
             </div>
           </div>
           <div className="card bg-base-100 shadow-xl w-full h-fit mt-2 rounded-md">
@@ -66,6 +75,7 @@ const Profile = () => {
       </div>
       <EditProfileModal />
       <SettingsModal />
+      <FeaturedWorkModal />
       <div onClick={handleOutsideClick} className="modal-backdrop" />
     </Sidebar>
   );
