@@ -1,4 +1,4 @@
-import { useState } from'react';
+import React, { useState } from'react';
 
 const SettingsModal = () => {
   const [skillTags, setSkillTags] = useState([]);
@@ -11,12 +11,20 @@ const SettingsModal = () => {
     }
   };
 
+  const handleOutsideClick = (e) => {
+    if (e.target === document.getElementById('settings_modal') || document.getElementById('settings_modal').contains(e.target)) {
+      return;
+    }
+
+    document.getElementById('settings_modal').close();
+  };
+
   return (
-    <dialog id="settings_modal" className="modal">
+    <dialog id="settings_modal" className="modal" onClick={handleOutsideClick}>
       <div className="modal-box">
         <div className="flex justify-between">
           <h3 className="font-bold text-lg">Settings</h3>
-          <button type="button" className="btn btn-sm btn-circle btn-neutral" onClick={()=>document.getElementById('settings_modal').close()}>&times;</button>
+          <button type="button" className="btn btn-sm btn-circle btn-neutral" onClick={() => document.getElementById('settings_modal').close()}>&times;</button>
         </div>
         <form>
           <label className="label">Language:</label>
@@ -34,12 +42,14 @@ const SettingsModal = () => {
               <span key={index} className="badge badge-accent">{tag}</span>
             ))}
           </div>
-          <button type="submit" className="btn">Save Changes</button>
+          <div className="flex justify-center mt-4">
+            <button type="submit" className="btn">Save Changes</button>
+          </div>
         </form>
       </div>
-      <div className="modal-action">
-        <button type="button" className="btn" onClick={()=>document.getElementById('settings_modal').close()}>Close</button>
-      </div>
+      <form method="dialog" className="modal-backdrop">
+        <button>close</button>
+      </form>
     </dialog>
   );
 };

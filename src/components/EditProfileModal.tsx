@@ -1,12 +1,18 @@
-import React from'react';
-
 const EditProfileModal = () => {
+  const handleOutsideClick = (e) => {
+    if (e.target === document.getElementById('edit_profile_modal') || document.getElementById('edit_profile_modal').contains(e.target)) {
+      return;
+    }
+
+    document.getElementById('edit_profile_modal').close();
+  };
+
   return (
-    <dialog id="edit_profile_modal" className="modal mt-24 mb-4">
+    <dialog id="edit_profile_modal" className="modal mt-16" onClick={handleOutsideClick}>
       <div className="modal-box">
         <div className="flex justify-between">
           <h3 className="font-bold text-lg">Edit Profile</h3>
-          <button type="button" className="btn btn-sm btn-circle btn-neutral" onClick={()=>document.getElementById('edit_profile_modal').close()}>&times;</button>
+          <button type="button" className="btn btn-sm btn-circle btn-neutral" onClick={() => document.getElementById('edit_profile_modal').close()}>&times;</button>
         </div>
         <form>
           <div className="flex flex-col items-center gap-4">
@@ -60,9 +66,9 @@ const EditProfileModal = () => {
           </div>
         </form>
       </div>
-      <div className="modal-action">
-        <button type="button" className="btn" onClick={()=>document.getElementById('edit_profile_modal').close()}>Close</button>
-      </div>
+      <form method="dialog" className="modal-backdrop">
+        <button>close</button>
+      </form>
     </dialog>
   );
 };
