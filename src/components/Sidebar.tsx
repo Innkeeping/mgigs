@@ -8,7 +8,7 @@ const Sidebar = ({ children }) => {
           →
         </label>
       </div>
-      <div className="drawer-side mt-20 lg:mt-16 lg:ml-14">
+      <div className="drawer-side mt-20 lg:mt-16 lg:ml-12 lg:w-64">
         <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay lg:hidden"></label>
         <div className="flex flex-col h-screen pt-8">
           <ul className="menu bg-base-200 text-base-content">
@@ -19,17 +19,19 @@ const Sidebar = ({ children }) => {
             <li><a>👤Profile</a></li>
           </ul>
           <div className="bg-base-200 p-4 border-t border-base-300">
-            <div className="flex items-center">
-              <div className="avatar mr-4">
-                <div className="w-8 rounded-full">
-                  <img src="src/assets/laptop.svg" className="rounded-full" />
+            <div className="flex items-center justify-between">
+              <div className="flex items-center">
+                <div className="avatar mr-4">
+                  <div className="w-8 rounded-full">
+                    <img src="src/assets/laptop.svg" className="rounded-full" />
+                  </div>
                 </div>
+                <span className="text-lg font-bold">User Name</span>
               </div>
-              <span className="text-lg font-bold">User Name</span>
-            </div>
-            <div className="flex items-center mt-4">
-              <button className="btn btn-square btn-xs btn-neutral mr-4">⚙️</button>
-              <button className="btn btn-square btn-xs btn-neutral">🔔</button>
+              <div className="flex items-center">
+                <button className="btn btn-square btn-xs btn-neutral ml-2 mr-2">⚙️</button>
+                <button className="btn btn-square btn-xs btn-neutral">🔔</button>
+              </div>
             </div>
           </div>
         </div>
