@@ -1,3 +1,5 @@
+import { Link } from "@tanstack/react-router";
+
 const Sidebar = ({ children }) => {
   return (
     <div className="drawer lg:drawer-open rounded-md">
@@ -12,10 +14,12 @@ const Sidebar = ({ children }) => {
         <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay lg:hidden"></label>
         <div className="flex flex-col h-screen pt-8">
           <ul className="menu bg-base-200 text-base-content">
-            <li><a>🔍Discover</a></li>
+          <li><Link to="/" className="[&.active]:font-bold btn btn-ghost text-xl">🔍Discover
+          </Link>{' '}</li>
             <li><a>▦Taskfeed</a></li>
             <li><a>🔖Bookmarks</a></li>
             <li><a>🔔Inbox</a></li>
+            <Link to="/taskboard" className="[&.active]:font-bold">▦Taskboard</Link>
             <li><a>👤Profile</a></li>
           </ul>
           <div className="bg-base-200 p-4 border-t border-base-300">

@@ -16,10 +16,16 @@ import { Route as rootRoute } from './routes/__root'
 
 // Create Virtual Routes
 
+const TaskboardLazyImport = createFileRoute('/taskboard')()
 const ProfileLazyImport = createFileRoute('/profile')()
 const IndexLazyImport = createFileRoute('/')()
 
 // Create/Update Routes
+
+const TaskboardLazyRoute = TaskboardLazyImport.update({
+  path: '/taskboard',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() => import('./routes/taskboard.lazy').then((d) => d.Route))
 
 const ProfileLazyRoute = ProfileLazyImport.update({
   path: '/profile',
@@ -49,6 +55,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProfileLazyImport
       parentRoute: typeof rootRoute
     }
+    '/taskboard': {
+      id: '/taskboard'
+      path: '/taskboard'
+      fullPath: '/taskboard'
+      preLoaderRoute: typeof TaskboardLazyImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -57,36 +70,41 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexLazyRoute
   '/profile': typeof ProfileLazyRoute
+  '/taskboard': typeof TaskboardLazyRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexLazyRoute
   '/profile': typeof ProfileLazyRoute
+  '/taskboard': typeof TaskboardLazyRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexLazyRoute
   '/profile': typeof ProfileLazyRoute
+  '/taskboard': typeof TaskboardLazyRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/profile'
+  fullPaths: '/' | '/profile' | '/taskboard'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/profile'
-  id: '__root__' | '/' | '/profile'
+  to: '/' | '/profile' | '/taskboard'
+  id: '__root__' | '/' | '/profile' | '/taskboard'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexLazyRoute: typeof IndexLazyRoute
   ProfileLazyRoute: typeof ProfileLazyRoute
+  TaskboardLazyRoute: typeof TaskboardLazyRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexLazyRoute: IndexLazyRoute,
   ProfileLazyRoute: ProfileLazyRoute,
+  TaskboardLazyRoute: TaskboardLazyRoute,
 }
 
 export const routeTree = rootRoute
@@ -102,7 +120,8 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/profile"
+        "/profile",
+        "/taskboard"
       ]
     },
     "/": {
@@ -110,6 +129,9 @@ export const routeTree = rootRoute
     },
     "/profile": {
       "filePath": "profile.lazy.tsx"
+    },
+    "/taskboard": {
+      "filePath": "taskboard.lazy.tsx"
     }
   }
 }
