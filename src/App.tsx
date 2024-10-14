@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar'
 import SideCard from './components/SideCard'
 import Card from './components/Card'
-import Modal from './components/Modal'
+import Modal from './components/GigModal'
 import cardsData from './Cards.json'
 import { useState } from'react';
 

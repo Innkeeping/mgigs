@@ -1,7 +1,7 @@
 import React, { useState } from'react';
-import ApplyModal from '../components/ApplyModal';
+import ApplyModal from './ApplyModal';
 
-const Modal = ({ isOpen, onClose, children }) => {
+const GigModal = ({ isOpen, onClose, children }) => {
   const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
 
   const handleApplyClick = () => {
@@ -32,4 +32,4 @@ const Modal = ({ isOpen, onClose, children }) => {
   );
 };
 
-export default Modal;
+export default GigModal;

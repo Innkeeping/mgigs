@@ -2,7 +2,7 @@ import { createLazyFileRoute } from '@tanstack/react-router'
 import Navbar from '../components/Navbar'
 import SideCard from '../components/SideCard'
 import Card from '../components/Card'
-import Modal from '../components/Modal'
+import GigModal from '../components/GigModal'
 import cardsData from '../Cards.json'
 import { useState } from'react';
 
@@ -37,7 +37,7 @@ function Index() {
           </div>
         </div>
       </div>
-      <Modal isOpen={modalOpen} onClose={handleCloseModal}>
+      <GigModal isOpen={modalOpen} onClose={handleCloseModal}>
       <h2 className="text-lg font-light mt-2 text-neutral-400">Organization Offering Gig</h2>
       <h1 className="text-3xl font-bold mb-4">Gig/Bounty Title</h1>
       <div className="flex justify-start mb-4">
@@ -50,7 +50,7 @@ function Index() {
       <p className="py-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
       <p className="py-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
       <p className="py-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-    </Modal>
+    </GigModal>
     </>
   );
 }
