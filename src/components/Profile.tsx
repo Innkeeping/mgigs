@@ -28,10 +28,10 @@ const Profile = () => {
 
   return (
     <Sidebar>
-      <h1 className="text-4xl font-bold mb-4 mt-16">My Profile</h1>
-      <div className="max-w-2xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 mr-4 mt-4 lg:mt-16 ml-14 lg:mr-4 ">
+      <h1 className="text-4xl font-bold mb-2 mt-2">My Profile</h1>
+      <div className="max-w-2xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 mr-2 mt-4 lg:mt-4 ml-14 lg:mr-4 ">
         <div className="justify-center">
-          <div className="card bg-base-100 shadow-xl w-full lg:w-48 h-fit rounded-md">
+          <div className="card bg-base-100 shadow-xl w-full lg:w-64 h-fit rounded-md">
             <div className="card-body items-center">
               <div className="avatar">
                 <div className="w-24 rounded-full">
@@ -40,19 +40,17 @@ const Profile = () => {
               </div>
               <h2 className="card-title">User Name</h2>
               <div className="flex flex-col items-center gap-2 mt-2">
-                <button className="btn btn-square btn-md btn-neutral w-full lg:w-48 p-2 ml-2 mr-2 rounded-md" onClick={()=>document.getElementById('edit_profile_modal').showModal()}>Edit Profile</button>
-                <button className="btn btn-square btn-md btn-neutral w-full lg:w-48 p-2 ml-2 mr-2 rounded-md" onClick={()=>document.getElementById('settings_modal').showModal()}>Settings</button>
+                <button className="btn btn-md btn-neutral w-full lg:w-48 p-2 ml-2 mr-2 rounded-md" onClick={()=>document.getElementById('edit_profile_modal').showModal()}>Edit Profile</button>
+                <button className="btn btn-md btn-neutral w-full lg:w-48 p-2 ml-2 mr-2 rounded-md" onClick={()=>document.getElementById('settings_modal').showModal()}>Settings</button>
               </div>
             </div>
           </div>
-          <div className="card bg-base-100 shadow-xl w-full lg:w-48 h-fit mt-2 rounded-md">
+          <div className="card bg-base-100 shadow-xl w-full lg:w-64 h-fit mt-2 rounded-md">
             <div className="card-body justify-left">
-              <h2 className="card-title">Earnings</h2>
+              <h2 className="card-title text-sm">Earnings</h2>
               <h3 className="text-sm text-gray-400">5 dolla</h3>
-              <h2 className="card-title mt-4">Skills</h2>
-              <h3 className="text-sm text-gray-400">Web Development, UI/UX Design</h3>
-              <h2 className="card-title mt-4">Achievements</h2>
-              <h3 className="text-sm text-gray-400">10+ projects completed</h3>
+              <h2 className="card-title mt-4 text-sm">Attestations</h2>
+              <h3 className="text-sm text-gray-400">EAS Attest</h3>
             </div>
           </div>
         </div>
