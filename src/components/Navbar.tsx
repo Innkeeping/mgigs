@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 
 const Navbar = () => {
   return (
@@ -21,7 +22,9 @@ const Navbar = () => {
           <ul
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-            <li><a>Recent</a></li>
+            <li>
+              <Link to="/Profile" className="[&.active]:font-bold">Profile</Link>
+            </li>
             <li>
               <a>Categories</a>
               <ul className="p-2">
@@ -31,14 +34,18 @@ const Navbar = () => {
                 <li><a>DAOs</a></li>
               </ul>
             </li>
-            <li><a>Post</a></li>
+            <li>
+            <Link to="/" className="[&.active]:font-bold">Gigs</Link>{' '}
+            </li>
           </ul>
         </div>
         <a className="btn btn-ghost text-xl">mGigs</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          <li><a>Recent</a></li>
+          <li>
+            <Link to="/Profile" className="[&.active]:font-bold">Profile</Link>
+          </li>
           <li>
             <details>
               <summary>Categories</summary>
@@ -50,7 +57,9 @@ const Navbar = () => {
               </ul>
             </details>
           </li>
-          <li><a>Post</a></li>
+          <li>
+            <Link to="/" className="[&.active]:font-bold">Gigs</Link>{' '}
+          </li>
         </ul>
       </div>
       <div className="navbar-end px-4">
