@@ -1,6 +1,11 @@
 import { Link } from "@tanstack/react-router";
+import React from 'react';
 
-const Sidebar = ({ children }) => {
+interface SidebarProps {
+  children: React.ReactNode;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ children }) => {
   return (
     <div className="drawer lg:drawer-open rounded-md">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -14,42 +19,42 @@ const Sidebar = ({ children }) => {
         <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay lg:hidden"></label>
         <div className="flex flex-col h-screen pt-8">
           <ul className="menu bg-base-200 text-base-content justify-left">
-          <li className="py-2">
-            <Link to="/" className="[&.active]:font-bold flex items-center">
-              <span className="mr-2">🔍</span>
-              Discover
-            </Link>
-          </li>
-          <li className="py-2">
-            <Link to="/taskboard" className="[&.active]:font-bold flex items-center">
-              <span className="mr-2">▦</span>
-              Taskboard
-            </Link>
-          </li>
-          <li className="py-2">
-            <a className="flex items-center">
-              <span className="mr-2">🔖</span>
-              Bookmarks
-            </a>
-          </li>
-          <li className="py-2">
-            <a className="flex items-center">
-              <span className="mr-2">▦</span>
-              Taskfeed
-            </a>
-          </li>
-          <li className="py-2">
-            <a className="flex items-center">
-              <span className="mr-2">🔔</span>
-              Inbox
-            </a>
-          </li>
-          <li className="py-2">
-            <Link to="/profile" className="[&.active]:font-bold flex items-center">
-              <span className="mr-2">👤</span>
-              Profile
-            </Link>
-          </li>
+            <li className="py-2">
+              <Link to="/" className="[&.active]:font-bold flex items-center">
+                <span className="mr-2">🔍</span>
+                Discover
+              </Link>
+            </li>
+            <li className="py-2">
+              <Link to="/taskboard" className="[&.active]:font-bold flex items-center">
+                <span className="mr-2">▦</span>
+                Taskboard
+              </Link>
+            </li>
+            <li className="py-2">
+              <a className="flex items-center">
+                <span className="mr-2">🔖</span>
+                Bookmarks
+              </a>
+            </li>
+            <li className="py-2">
+              <a className="flex items-center">
+                <span className="mr-2">▦</span>
+                Taskfeed
+              </a>
+            </li>
+            <li className="py-2">
+              <a className="flex items-center">
+                <span className="mr-2">🔔</span>
+                Inbox
+              </a>
+            </li>
+            <li className="py-2">
+              <Link to="/profile" className="[&.active]:font-bold flex items-center">
+                <span className="mr-2">👤</span>
+                Profile
+              </Link>
+            </li>
           </ul>
           <div className="bg-base-200 p-4 border-t border-base-300">
             <div className="flex items-center justify-between">
@@ -62,7 +67,15 @@ const Sidebar = ({ children }) => {
                 <span className="text-lg font-bold">User Name</span>
               </div>
               <div className="flex items-center">
-                <button className="btn btn-square btn-xs btn-neutral ml-2 mr-2" onClick={() => document.getElementById('settings_modal').showModal()}>⚙️</button>
+                <button
+                  className="btn btn-square btn-xs btn-neutral ml-2 mr-2"
+                  onClick={() => {
+                    const settingsModal = document.getElementById('settings_modal') as HTMLDialogElement | null;
+                    settingsModal?.showModal();
+                  }}
+                >
+                  ⚙️
+                </button>
                 <button className="btn btn-square btn-xs btn-neutral">🔔</button>
               </div>
             </div>

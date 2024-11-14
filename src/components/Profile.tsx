@@ -1,3 +1,4 @@
+import React from 'react';
 import Sidebar from '../components/Sidebar';
 import EditProfileModal from './EditProfileModal';
 import SettingsModal from './SettingsModal';
@@ -9,7 +10,7 @@ const Profile = () => {
     const settingsModal = document.getElementById('settings_modal') as HTMLDialogElement | null;
     const featuredWorkModal = document.getElementById('featured_work_modal') as HTMLDialogElement | null;
 
-    if (editProfileModal && (editProfileModal === e.target || editProfileModal.contains(e.target as Node))) {
+    if (editProfileModal && (e.target === editProfileModal || editProfileModal.contains(e.target as Node))) {
       return;
     }
 
@@ -28,8 +29,8 @@ const Profile = () => {
 
   return (
     <Sidebar>
-      <h1 className="text-4xl font-bold mb-2 mt-2">My Profile</h1>
-      <div className="max-w-2xl mx-auto grid grid-cols-1 lg:grid-cols-2 sm:grid-cols-1 gap-4 mr-2 mt-4 lg:mt-4 ml-14 lg:mr-4">
+      <div className="max-w-2xl mx-auto grid grid-cols-1 lg:grid-cols-2 sm:grid-cols-1 gap-4 mr-2 mt-2 lg:mt-4 ml-14 lg:mr-4">
+        <h1 className="text-4xl font-bold mb-2 mt-2">My Profile</h1>
         <div className="justify-center lg:col-span-1 sm:col-span-1">
           <div className="card bg-base-100 shadow-xl w-full lg:w-64 h-fit rounded-md">
             <div className="card-body items-center">
@@ -40,8 +41,24 @@ const Profile = () => {
               </div>
               <h2 className="card-title">User Name</h2>
               <div className="flex flex-col items-center gap-2 mt-2">
-                <button className="btn btn-md btn-neutral w-full lg:w-48 p-2 ml-2 mr-2 rounded-md" onClick={()=>document.getElementById('edit_profile_modal')?.showModal()}>Edit Profile</button>
-                <button className="btn btn-md btn-neutral w-full lg:w-48 p-2 ml-2 mr-2 rounded-md" onClick={()=>document.getElementById('settings_modal')?.showModal()}>Settings</button>
+                <button
+                  className="btn btn-md btn-neutral w-full lg:w-48 p-2 ml-2 mr-2 rounded-md"
+                  onClick={() => {
+                    const editProfileModal = document.getElementById('edit_profile_modal') as HTMLDialogElement | null;
+                    editProfileModal?.showModal();
+                  }}
+                >
+                  Edit Profile
+                </button>
+                <button
+                  className="btn btn-md btn-neutral w-full lg:w-48 p-2 ml-2 mr-2 rounded-md"
+                  onClick={() => {
+                    const settingsModal = document.getElementById('settings_modal') as HTMLDialogElement | null;
+                    settingsModal?.showModal();
+                  }}
+                >
+                  Settings
+                </button>
               </div>
             </div>
           </div>
@@ -60,7 +77,15 @@ const Profile = () => {
               <h2 className="card-title">About Me</h2>
               <p className="text-sm text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
               <h2 className="card-title mt-4">Featured Work</h2>
-              <button className="btn btn-square btn-md btn-neutral w-full lg:w-48 p-2 ml-2 mr-2 rounded-md" onClick={()=>document.getElementById('featured_work_modal')?.showModal()}>Add Featured Work</button>
+              <button
+                className="btn btn-square btn-md btn-neutral w-full lg:w-48 p-2 ml-2 mr-2 rounded-md"
+                onClick={() => {
+                  const featuredWorkModal = document.getElementById('featured_work_modal') as HTMLDialogElement | null;
+                  featuredWorkModal?.showModal();
+                }}
+              >
+                Add Featured Work
+              </button>
             </div>
           </div>
           <div className="card bg-base-100 shadow-xl w-full h-fit mt-2 rounded-md">
