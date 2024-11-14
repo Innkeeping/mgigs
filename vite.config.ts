@@ -7,6 +7,6 @@ export default defineConfig({
   plugins: [
     TanStackRouterVite(),
     viteReact(),
-    // ...,
   ],
+    base: '/mgigs'
 })
